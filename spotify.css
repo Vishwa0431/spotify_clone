@@ -59,6 +59,7 @@ p {
 .content {
   margin-left: 55px;
   padding: 15px;
+  padding-left: 50px;
   background-color: black;
 }
 img {
