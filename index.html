@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link rel="stylesheet" href="spotify.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="body">
+    <!--header-->
+    <section>
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 bg-black"
+      >
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a
+            href="/"
+            class="d-inline-flex link-body-emphasis text-decoration-none"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDZ1ZcQ0so9d4v4dxVX-pcSyvBZdHqbZm3CA&s"
+              alt="logo"
+              height="35px"
+              width="40px"
+              style="padding-left: 10px"
+            />
+          </a>
+        </div>
+        <div class="house">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40px"
+            height="30px"
+            fill="white"
+            class="bi bi-house-door-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
+            />
+          </svg>
+        </div>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </ul>
+        <div class="col-md-3 text-end" style="padding-right: 10px">
+          <button type="button" class="me-2 text-light btn" id="btn">
+            Sign-up
+          </button>
+          <button type="button" class="btn btn-primary">Login</button>
+        </div>
+      </header>
+    </section>
+    <div class="main-container">
+      <aside class="sidebar bg-black text-light">
+        <ul>
+          <li>
+            <a
+              href="/"
+              class="d-block p-2 link-body-emphasis text-decoration-none"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-original-title="Icon-only"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="25"
+                fill="white"
+                class="bi bi-collection-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link active py-3 p-2"
+              aria-current="page"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              aria-label="Home"
+              data-bs-original-title="Home"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="25"
+                fill="blue"
+                class="bi bi-postage-heart"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.5 1a1 1 0 0 0 1-1h1a1 1 0 0 0 2 0h1a1 1 0 0 0 2 0h1a1 1 0 1 0 2 0H15v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1h-1.5a1 1 0 1 0-2 0h-1a1 1 0 1 0-2 0h-1a1 1 0 1 0-2 0h-1a1 1 0 1 0-2 0H1v-1a1 1 0 1 0 0-2v-1a1 1 0 1 0 0-2V9a1 1 0 1 0 0-2V6a1 1 0 0 0 0-2V3a1 1 0 0 0 0-2V0h1.5a1 1 0 0 0 1 1M3 3v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1"
+                />
+                <path
+                  d="M8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"
+                />
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="nav-link py-3 p-2"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              aria-label="Dashboard"
+              data-bs-original-title="Dashboard"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="25"
+                fill="white"
+                class="bi bi-music-note-beamed"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13s1.12-2 2.5-2 2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"
+                />
+                <path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z" />
+                <path
+                  d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <main class="content">
+        <!--popular artist-->
+        <section>
+          <div class="container">
+            <div class="row">
+              <h3 style="color: aliceblue">Popular Artists</h3>
+              <div class="col">
+                <img
+                  src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca"
+                  alt=" pritam"
+                  width="120px"
+                  height="140px"
+                  class="circle-image"
+                />
+                <h5 style="color: aliceblue">Pritam</h5>
+                <p style="color: rgb(193, 197, 197)">Artist</p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab6761610000e5eb5ba2d75eb08a2d672f9b69b7"
+                  alt="Arijit singh"
+                  width="120px"
+                  height="140px"
+                  class="circle-image"
+                />
+                <h5 style="color: aliceblue">Arijit Singh</h5>
+                <p style="color: rgb(193, 197, 197)">Artist</p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab6761610000e5ebbd6fbc7d0973cc33940781ad"
+                  alt="Sachin-jigar"
+                  width="120px"
+                  height="140px"
+                  class="circle-image"
+                />
+                <h5 style="color: aliceblue">Sachin-Jigar</h5>
+                <p style="color: rgb(193, 197, 197)">Artist</p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab6761610000e5eb59303d54ce789210e745e1a9"
+                  alt="shreya ghoshal"
+                  width="120px"
+                  height="140px"
+                  class="circle-image"
+                />
+                <h5 style="color: aliceblue">Shreya Ghoshal</h5>
+                <p style="color: rgb(193, 197, 197)">Artist</p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab67616100005174a80a803733f6a070e8f873fb"
+                  alt="darshan raval"
+                  width="120px"
+                  height="140px"
+                  class="circle-image"
+                />
+                <h5 style="color: aliceblue">Darshan Raval</h5>
+                <p style="color: rgb(193, 197, 197)">Artist</p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab67616100005174b19af0ea736c6228d6eb539c"
+                  alt="A.R. Rahman"
+                  width="120px"
+                  height="140px"
+                  class="circle-image"
+                />
+                <h5 style="color: aliceblue">A.R. Rahman</h5>
+                <p style="color: rgb(193, 197, 197)">Artist</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--popular album-->
+        <section>
+          <div class="container">
+            <div class="row">
+              <h3 style="color: aliceblue">Popular Albums</h3>
+              <div class="col">
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b273aad3f4b601ae8763b3fc4e88"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <h5 style="color: aliceblue">GLORY</h5>
+                <p style="color: rgb(193, 197, 197)">Yo Yo Honey Singh</p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <h1 style="color: aliceblue"></h1>
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BODA4MjM2ODk4OF5BMl5BanBnXkFtZTcwNDgzODk1OQ@@._V1_.jpg"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="font-weight: 600">Yeh Jawaani Hai Deewani</p>
+                <p style="color: rgb(193, 197, 197)">Pritam</p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <h1 style="color: aliceblue"></h1>
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b273773c5f60bcb309ef8802e4ef"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="font-weight: 600">Raanjhan (From "Do Patti")</p>
+                <p style="color: rgb(193, 197, 197)">Sachet-Parampara</p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <h1 style="color: aliceblue"></h1>
+                <img
+                  src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/sahiba-083846213-3x4.jpg?VersionId=6mgvx3VFldqNLaexDewtTE_vnrJ7WmMh"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="font-weight: 600">Sahiba</p>
+                <p style="color: rgb(193, 197, 197)">
+                  Jasleen Royal,Stebin Ben
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <h1 style="color: aliceblue"></h1>
+                <img
+                  src="https://s.saregama.tech/image/c/fw_485/6/38/c1/aaj-aei-raat_ott_1440_1729780867.jpg"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="font-weight: 600">Aaj Ki Raat (From "Stree 2")</p>
+                <p style="color: rgb(193, 197, 197)">
+                  Sachin-jigar,Amitabh Bhattacharya
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <h1 style="color: aliceblue"></h1>
+                <img
+                  src="https://i.scdn.co/image/ab67616d0000b273d5f4378b1ffc9119fdc7306d"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="font-weight: 600">Sajni</p>
+                <p style="color: rgb(193, 197, 197)">
+                  Ram Sampath,Arijit Singh,Prashant Pandey
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--Playlista from our editor-->
+        <section>
+          <div class="container">
+            <div class="row">
+              <h3 style="color: aliceblue">Playlists from our editors</h3>
+              <div class="col">
+                <img
+                  src="https://i.scdn.co/image/ab67706f0000000246317cc8ab6b5882610cce66"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Ring in 2025 with your favorite party tracks!
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab67706f00000002e33921151f34f084b36d4480"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Sleep with sounds of pouring rain and occasional rolling
+                  thunder.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab67706f00000002f6cc01e86b401bd7f39dc290"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Relaxing music and sounds for sleeping.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab67706f00000002b97a349219b10444edccf6b2"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Instrumental piano versions of famous songs to make you fall
+                  asleep.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab67706f00000002ca13e4922c8181b0f1129f74"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Get a great night's sleep with these soft acoustic guitar
+                  tunes.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://i.scdn.co/image/ab67706f00000002db0e8839c838791adbc732ec"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Colored noise to help you sleep.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--feature chart-->
+        <section>
+          <div class="container">
+            <div class="row">
+              <h3 style="color: aliceblue">Feature Chart</h3>
+              <div class="col">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGLlBu6U1jfDUnXRCLefd3NBreENIgyowtcw&s"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Your weekly update of the most played tracks right now -
+                  Global.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAolBMVEXsHjL////tHjL5usLsGi/sFy3rABfrABH83OD/8/XsEyvsGS795uj5vMTrACPsDijvTFv96uvuOkr/+frwXmvuMUX5tL3rAB3xZnL3qrT3pa/5wMfuPE72maH96Or4uL37z9TtIznyg4z0jZbtKz75xcryfIX71tnwXGbuRFPxbnnpAADyaXXwUmD2pq7yc331k53zgIv2n6bwW2zvWmPziI5Zjkm4AAAV/klEQVR4nO1dC4OiOs+mnaJSlCIX0cUbgiiuqOPO/P+/9jUpKN52Zs+3O+K85px1sHLpQ9IkbdNU07410XtX4J/TE+Hj0xPh4xM9OaaS5F84uFuN/jbRkyP4ZwrLEuz7cLeCECGKhjPbbLZRg38XNp7CMPVZmyAtcs7uVKW/TCdSavobUpLxHn0PJlYRUr4nR3K31h3r9feoyicxk6wbtyUZLmD0TfoN9E2Vh40x2XhZYkaONxvI9jiwvoPVqCBgPjFyZz3bxWluNYd7t52wxwdYRShiUDBGtz3uumTat8dGn38vKbWkIm1lkWVZUT6aumPipuIbiGkFgCU16TieS0Uz3yV8RxTC+1XtL1GFh2IlpbS9mAwmiy4JR4R0PX7Hmv0tqmqaSCLMvPQ99fztVB63tO/gnlYBNBaSh9IUukZrl0qEe+sbADxBwJdGxachbevx4Wln/UMzrgCEVvj4mvRMCpm2PXLQ+3Z9C/xmOT3ZEt1ua2Txb8A/oHMYzErWabqMrG/CwWu60uRCfJfeL9AlQloWflMpxaJvgk3RORiqDAS98tOD0jeB8Rt6Inx8eiJ8fHoifHx6Inx8eiJ8fPpfQqh6Tfo1euje4tkoRmJfI/+RIdLqIdVzo3tJxu6RxzSqCCnlv8g12j/ybPCJlH5/hBr3vjVCSjXdXiBNFzCR77amSIt3gT9DrFQxinM6GE7rPOhxVi9mKUogrMbwAvXNPJx9AoUWgzq1BYd0Em1CVa0pZT4i7HMV4ybLGbeswBJ6yTzKTN1kOLpqqeHVusKkZ8cKoVkiVANvlAlnHW8G+61NuYrsizJb/ifL+7P4te+I+gamXK/WkYdI3I8XSueMJ7mAS5gzhdlwGmODJYuRr39dnf+MzqVUUUVKpTxyf16ZVUwtEOPhGI6PMVQLUVeIn+ChGZ1MnJI4oJo5bJ9ZlFZdXbuPEdJoUmBYFEhtrrEDQqNVlG5qOp36MUKIdgMxXA2HtgpdDAU9IHzPs3yHbbGVmVfvdW/6ECFLsBFOLMF0HqQAxlhxXSEc24Fu8sBGiDPxxXX/HH2IUM+7UP2EoSqyEO6GF+1wJPAOwQi+9IIvrvvn6EOEfIUy2lRnCpzo70SKh90lBr5R3kcxbXxpzT9Lv0coWSReofaDAKFIZwe+zROFsJ2YKvjdxtObtTT6HyNERbOxlMvNEkTolwgZuuN61npkhEouA+Vz63aVh+NMV6U5WIx24zER8iV2pALloQY9lFldaRp3hi6cZiGfJ4+oaQQcTlFrWkz6LAIVq5uKQpcufLCYXB8/rLWAOgt0Pt0RD4Kmh7haCSu9tkXUCBpDfAfdvJ6e6QfWAntSql/hTnpFB6Nf8WnI4qUo3dQ0KPwTfqnIyQlBe2OXnrdTTxbeQHjsAcPvVlrtXEzAvSk0jXsode16tsLbPGy5rjsuYvWplU0KjG57bUkbWPCw3Z8qjN1JUleANxDSaDt7fU0dWozT6EF/E06n88ksEViieNh2rNkgDF82uahpI9Rujx8JILMcW6MaF5Hj+LrAbi4tNE17qHM9SiKrzhHvn371lEk6nF14bUMG5bVlH9J/rF2JsJ6d3hP6LwhhpeL3RqgdEdZ09KlK/4mHMNYGDmr3+/KQ0mSbpq/bpN5KBulGFYtl+bdfAOXSmtTZSBzoIkZY/avp2Od/oauR7Gj9TJ3VdrblT+gaBKoJM3GyoR/V1tn8A7pACANL1nowX7QW00mcPP7qrisAhDM59JZa20cONEG6RCjW3WrPdiAevDVeVN50TufSSPzggnphLYSaS3M3ux+Kl+P8IczeTTpHyFfIwo0IrKDxisc9Th/ZPJ5VnXKcIpzq2OkrRnqTh1Y25wjVhO+rpeb1g64x6GdFlBATVqPZbFiidLcpjAPomimCRiMQ+vFWjFsBhqbocIZ6P+rq4OsXbp5HDEWh0i4qcIElsqJMhdkIZ7VfGEZrkDpl/MxrmqZL7qSDRSuc2Xrhx1LurOLe5EdqC1uekOIEvx5tNy1jPI2XlH2tbj7nIUUeLhKhqsvKYir601K7Ll4ZBhFF8KWTFyPC7SKfDePr4sx2iiunYUySZ73iYmNjfW2rPn+YGsMni7UlJQqHopQvbsUVI+L2mhBxgggXrUPpEAW1cqaLUD2umdV4lf3XzuCcIzyGkbQ7u63NcSCbUqu6jh1qKUWXaadlZAGu+vmZiNAawEG31cZ5rNWXursXAqP0Z4lyk4NmoGaiRn6nk4kaA3a34oCwGxaFxppL0T2cuTggpA18AUuRzODX8EvF9MLiUzGoMmA8g3nPAG2Iu0so85XB7ERMSSkxskhLZli4tzQLgxbIyNeoM3MLhDhz7L4GjMkbuZPtl+bYukTIrG2rijHmVI3KuGnAZL/Rwql8qT8KHsIwP2ugguoxE8M23TiAgdRgVUVIJr40HZEvDctdNQ2QSOLJ9KguVlxgGE2rGPpVaGKhEKpAITUXPtG4h/PdQzyVNrtVKSXTzXs/Cr56APlqD5gJ6uSruGDlBHPzqHgZOF1FZ/QChXDqQJVV+PREK95FMesfDApNE4TF2zJae/rFaX0upFS3eCL/Ml1YzSEqCyO3sBm+F24AX8O3+RHhIaJGvgtse4siska9GYmwmCo/aJ47IqSmHU/mNoZYUE3YqqUpRbMrulF8e45Qoi4Qii1IaUvHIBSqWAeZing+OMw1jpdf2lk5Q2gNurImqVWMtjWxNW5VVNdccaaweAOrIqUHHnIbR4qXKIlmk5QINc6X8dwoxf6OutTaofYwTfS2maWqaPWhbl0bu1E0wPaZims8ZALFcTq0uC6ieSmVusWSRHbHks1ROd0JodKFpJdIDlGuXLhWxiNskBOYHtXVS2jb+jWExQFZxF4+m5f20HzbT+aQwY814UZfG7Vx0bdQ733x6nOW97CKPZMq9UmmtmVlqkFNpOG8glDqz0IDd7tlw/M4apxu3uDiJyBs35OHUiWcB1m0bdmOmq3TwtZQ164ipKazOJ5mKIR6hl/2/VXv7u1QtsS1ewpmDYpCt08guktBryIE2bYn5Wlhr2iHjUrX4rgE4E4INbGqcrGbYmjCKcQxdgWvS6ns+WtpiFbxnRYIYfHC8er4a0fSr4x5CxG3VSMyxvuoXNSlN3cqZl0WajiGyqJuu92eYBee/5LH4w0sXbCSnAeNKNEbogm4DKlXpLO76+LV3YUXfK3bduVpsjcYLWf7zWa0liqVHkpF5O02g9HKLwMytARIdZEjOIw0lvQ3c2MlMH6BorFZoF6RDvtqNNiMfmlfPTZ5fWaGcQErujg76cnB2qdjIYxjFPEZtAzVkJYfRHyhCfmNN9FRCCNW3BOv/t2k5D+hW087zCEeeKiKytVq1XVr5UiHBtYGm+vcS6Ik32OPHpf2aSUw+uVzBDcRFhBOf69Urzw8TqdiiepGEXceztWQ+TRih7eAN7zzaGLJE3p467RyIq1ecngBJ3JHrfDU2IA1rVz39dM8f/15TNtUDGrbu/sC27//RhlPywGC9sa+/9zcP3g8Ff7ydT/YxKtM1//NI/6oOv/ijmBsAmkZ9DrMWf2LKtCTv/cGefn8o6m7+pVhKpBLFXw4rzAfFbNyX7p8fgR0/F19VSu6pdcZDe3lmz2MODuxEuq0iNZwpvEcIfNf4zh+9UtDF8HXd1vV3IzWcS8Mw84g3iZmlbN4Wryzaxivf4HQGUgIA8csnLQIvr54WHOe7F86nZcX+dF5Gfj86KDoeU+WdcL47tbvkq4g7Lx0Bk7R0mi0kZB6mDSZ2T3Eh9TpTI6jLVSLQywNtfqJ6QXCoUT4MnBYoTKiHxJwDwZxmfMD+RciC+V/G6eczcXXggi/eLT3M3SNh50OIsSvwENAKH3qtAP4Rv08X22AZWFadvW4VzC3s38MhC9VhIqH0nbrgKqzbXBd50EMaF8KhNTal9LbW+rX7npP+ixCzbQlws4PlVeA+XupUHeFpmE+/DQaSZjha+3ioj+NkHsAIy4u0FexNyytpngFbGkOJ+xrl1rhQ4SbE4SjMnqIi2I0A0JS4JJeFsCf0BPXbntH+jMpfXlJxSE0qExdo/dBs44YsrIzsuoET/sDhJSHAGAy2tosAAZqxWAAi0DthCth5qBvQlaHDkWFfoMQfjpKqSa2yp8Blyf2Mq3wejSW9UA6JeQEdc22ZtvvfIjwYC0YACisQifsvSfF3nN8DbggToxvgcubmu1m9lmEWmEiXg5u2z5T1j0ALodLGNi2gZu9Jb/7yEWVPi2l0HUP1nv0sBXEQQbj2ixTdlI3mclBTDuze+C4TZ/nIbQ6HuVpLFGiWg1HuJh9hnbSAfJXcLxxamUS/0BKKTMZ1XnkZ29xCM53mDDZOsEf7/QGirCNerXSNTcQqmV3YM2LvoXkH0syX81Q6IHXk0pHWgiNr4rOlCLwVjv7L46v/D1d9vGx4UHfD4cthuivvOnM9153va0oJy/Q9Z4JGu2OyqckNRdTFzpHSDXo8naKHdeo6KNOGTLd64WdcF8E1lL+CmL6LnQwhgcOFlqos/3ayLXf00VVxAzbFaw/p4wPoV/U2TPFzJfJmhdpatC4r7lIoUO8eZ0BwecexHRQp9j3C4Rmhr3bjecznrxhxy9cyWZo7oBrvS0VXBd8htIoTwEWhl4gCrJyZRJrNCJ1IaWUo5hK7fhjs+kpPw2cUD2box7Zp16+BU69hHtLz0LsVrDyXjjq8dJ5rZEyvUSompZqXEpzYNgWtbZqeCaE4cQOWnyTg54JZ5VRbt4Hk9jLzDLT6d3pyvwh9VB7lN7ZZFXM/EXpofAFTQgzlaatbiLINEDYWddnvObaDKlpD4BNSOFLrmGqNtCt/cmhOASfTU/heFCud1aJUH7Ic0I0ifWwilcqQTVd5LtBT9Jg5PFjbAHl3BsN5A+DwS6HjKXRahfHu1XJL7SVLJdl8QgH+OuKEEjXffvtLXcYL6e81ZAF576d57YvdHQIYEG3OAoknoMrgQT9zc2/lq7MPamaMhPS6Ja7yR9/Y2aRhp5eXEwrc/t1kdGavOZ/Sk+Ej09PhI9PT4SPT0+Ej09PhI9PT4SPT0+Ej09PhI9PT4SPT0+Ej09PhI9PT4SPT0+Ej09PhI9PT4SPT0+Ej09PhI9PT4Sa9tApdrVP8bA28Vv/jaDqzY+pnpvGfYoAofExTR8XIiAkH1NNd+D8DD0RPhHWn54InwjrT/97CKfv8ZFm86sIi6hvenqXU/e1DKMt/drrzi2lF1cVty7LywBeWgnZPY/OPT7rMwgHTYHJ6CxL/lEp5a7x8Ji2TaPXfXPGi1UlDEKKT94GLSKPbzm84jTQH+/OdK4Wm+HdTq8q3+Bl1PJVhAHmzmNYAes2Qozk1jkXGO3NL3nkeHmE0dT+r1+nm5dBdDiu4NDlX/2Sh9Zse57hxwwsezlsCkaj3HOu7kNFmX69F3SOsKdDJp0kwR9vImy0SLeBKZMnFuU9MvbNs4eKd2JksPEAX7nuSTpPTIwNuyPzNwM2oj+vEf9FyPaUizzDtNnjNNIzg8TX1o1RltnJVZE4R9gOkVIUpZsIIf21jltYt33dnxJ0zE/uLmbuWOUyXxuGd4FwnjD1/jYnqT6Bh7qNm9hWSs2kVexbuw+G40uEyPlg3r2+jOW6Ll0MUa5vIKSYO9ATlgu7BVj2GPa0thrNAJ5gwoGgiFC3AgsRWkEgWxEPYPMoRGjkXOW13XA9CKgUw8CUlzYbAaM8t2H5VdBsWiqNCJ8QEnpvK/m4SCKc/ZRPgto1mg15Q2YFQv7/0yDrhhTxohofIJzLx7HbCGGBW4v0GjlxITf7ihBfOIOxG65hfxI4WEkpdcdDtum8OH2JsB/2bF2sQlgiDAhdsgm4DZdvLDsMpfCFk4xnG6M7cLjT6WU688Jud5BjblTPID1LcCtvt2yJ8GXeDZeC0l3Lbe0SPRv0Xge9VL6u6V5no7Yb9k/a4zWEc1+Xoj9LbiOE7WhaYkDmHbJI9sRoOlNitIi7suRBVx5sA8nDoZTlTQN4qKEKW5BJpBCGxODWhEy7EmmfkITnhCyjOVm0yZw6kF8bM5+Tca6jvjNgSwwaDYXIcJNz0oU81e5C3j/IDfmm2pjtthvEpDvFnLC/RTj1dao3WmHEbutSMSLdXy2ykVrBXpBBY0QWWdQji5970sqiAZn+lAjlU3uqHTYnxG2uDNgVAxGmBvnljMm+VSAUUhzeZFWH9mAWOcRdJlPS3q5gS3ds9GNIsUUZN5nkYWsl9c4vFrqxNiLuT9jufTpaphLtirdkUx3tM/ZbhGEgOThskd8i5GuDTA1jFbhENpKVfP3jMJSvlIdwMCXkJybYnzcYx3YoqxFLnkELAYT2hCx2pJ1VES4dyfvpLuK+5OebS/LAGg5BqQAP15jkPXOERPjetA2yFY1lPGjLB8lbbxoWb8hqBLAdV2t/mnHsAuFcKn4TEhv/DiFluI9FO2m8SBEx8mROWvPpPJxHIWnDwbSJCMceR4ScTYjRJWuhKYRZ6rpj0uNthTAChJ5YQYrzTuRLtEuXSElilije5oTpzHprTVeS8++BBLWCui0WiNB9FZjRd8tNP5RS3P6tlE4dXdMbkJL7twilciZgDEWKYm1K/lgi3+eycS3wQLZDsjDkTZS1gFrKZkILhDa+oEwrEK5/vktU3PHskWssAaFsbpvmz/1iyyEnwIK4kwgzjefDEqHfdWN9phDCumwhedjUol+51Evv4jbCedPUuIOZcsPopqYBQw463zHNrA02TfQN0upIBjT6XdLuuOSlKXWpL+Hvm4iQwrYfao86RBjs5KtuRhKhJUUVMpu7b7L8XTa5oQ+WaC9fiAHZ+2Fdql/u5rdpSugxInS6ZAKbaZQILalw5qJFOrJwexvh3GeaPlS5tzs3eYgeJSdut0FBqXa3YP4kUjccmjyFg7ltzYz2sDEnbtbvdmG3oL1sdphdgy8NYvPEJe9WJBWDoDMpWHPXXWo7Ccl4Fz5IrA9JiLt7WBROqfBC3FRin/Bh23i38jFZCajb3CDNvG1IhNI8dUkr6INv0PNvapqpwzXeKFKTd0Tj5+46QvgQyyWIO8u8N3A7RbZ97SfSdxM2HOjMWeYR8z3PSd7eEmb6kl268rWTpRcx/raUl+XLoXSD7W0/8ZaJruVpCsne5TE1+TJN1fJV4GKUp6/bzAS/dOmw5M3zTb2fruUBj96WPrrR+erNlNWYQTVuIYwZ052zDPq3EGpcdR6YylJKmXSj8dWZAjMQQblmck6hN0Cl1BlvXF1MdVSpcDZ+SDQcz5Y/gEtO0R0Hv1wv1qFS2DJF5TWi0MdQH5CqivPiC/YD4InirGdyJqUjPpxeA3jeDhVIeuzE0cq34sdDHinY3sufkw6v/Hb5cbooU3WIjss7j1m2j+dr57W43kE80zS7xVWA13hYeU6ZyvrQ1S0qeKgeS5Z9Rz+cf3xJh/uUFx1qfaxu2QWlRxiHW9Cze3yM8Bb9f0cxaNGBvQN9EcI70hPhE2H96YnwibD+9D+B8P8Ay7y0McGR+HkAAAAASUVORK5CYII="
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Your weekly update of the most played tracks right now - USA.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Your daily update of the most played tracks right now -
+                  Global.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_us_default.jpg"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Your daily update of the most played tracks right now - USA.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_global_default.jpg"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Your daily update of the most viral tracks right now - Global.
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_us_default.jpg"
+                  alt=""
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Your daily update of the most viral tracks right now - USA.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--Popular radio-->
+        <section>
+          <div class="container">
+            <div class="row">
+              <h3 style="color: aliceblue">Popular Radio</h3>
+              <div class="col">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4YRxDV8wJFPHPTeXepOstw/en"
+                  alt="radio1"
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  With Sachin-Jigar, Amit Trivedi, Mithoon and more
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/2FKWNmZWDBZR4dE5KX4plR/de"
+                  alt="radio2"
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  Playlist With Karan Aujla, Shubh, Sidhu Moose Wala and more
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0oOet2f43PA68X5RxKobEy/en"
+                  alt="radio3"
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  With A.R. Rahman, Vishal-Shekhar, Atif Aslam and more
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/5VVN3xZw1i2qihfITZlvCZ/en"
+                  alt="radio4"
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  With Santhosh Narayanan, Anirudh Ravichander, Harris Jayaraj
+                  and more
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4fEkbug6kZzzJ8eYX6Kbbp/en"
+                  alt="radio5"
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  With Armaan Malik, Mohit Chauhan, Atif Aslam and more
+                </p>
+              </div>
+              <div class="col" style="padding-left: 35px">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0GF4shudTAFv8ak9eWdd4Y/en"
+                  alt="radio6"
+                  width="120px"
+                  height="140px"
+                />
+                <p style="color: rgb(193, 197, 197)">
+                  With Mukesh, Tabassum, Asha Bhosle and more
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--Footer-->
+        <section>
+          <div class="container" style="color: aliceblue">
+            <footer class="py-5">
+              <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Company</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >About</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Jobs</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >For the Record</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Communities</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >For Artist</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Developers</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Advertising</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Investor</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Vendors</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Useful links</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >support</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Free Mobile App</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                  <h5>Spotify Plans</h5>
+                  <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Premium Individual</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Premium Duo</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Premium Family</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Premium Student</a
+                      >
+                    </li>
+                    <li class="nav-item mb-2">
+                      <a href="#" class="nav-link p-0" style="color: aliceblue"
+                        >Spotify Free</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-md-2 offset-md-1 mb-3">
+                  <ul class="list-unstyled d-flex">
+                    <li class="ms-3">
+                      <a class="link-body-emphasis" href="#"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="white"
+                          class="bi bi-instagram"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="ms-3">
+                      <a class="link-body-emphasis" href="#"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="white"
+                          class="bi bi-twitter"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="ms-3">
+                      <a class="link-body-emphasis" href="#"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="white"
+                          class="bi bi-facebook"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+              >
+                <p>© 2024 Company, Inc. All rights reserved.</p>
+              </div>
+            </footer>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
